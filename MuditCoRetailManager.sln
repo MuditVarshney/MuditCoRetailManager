@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MRMDataManager", "MRMDataManager\MRMDataManager.csproj", "{8D032977-2DD2-420C-B277-948B617C9D1A}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MRMData", "MRMData\MRMData.sqlproj", "{88B62227-8DA6-4929-8C60-314E46FFE60F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MRMDesktopUserInterface", "MRMDesktopUserInterface\MRMDesktopUserInterface.csproj", "{43DE320B-F7BA-4E01-8EB3-5A7F0DC22E99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,16 @@ Global
 		{8D032977-2DD2-420C-B277-948B617C9D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D032977-2DD2-420C-B277-948B617C9D1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D032977-2DD2-420C-B277-948B617C9D1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88B62227-8DA6-4929-8C60-314E46FFE60F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88B62227-8DA6-4929-8C60-314E46FFE60F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88B62227-8DA6-4929-8C60-314E46FFE60F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{88B62227-8DA6-4929-8C60-314E46FFE60F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88B62227-8DA6-4929-8C60-314E46FFE60F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88B62227-8DA6-4929-8C60-314E46FFE60F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{43DE320B-F7BA-4E01-8EB3-5A7F0DC22E99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43DE320B-F7BA-4E01-8EB3-5A7F0DC22E99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43DE320B-F7BA-4E01-8EB3-5A7F0DC22E99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43DE320B-F7BA-4E01-8EB3-5A7F0DC22E99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
