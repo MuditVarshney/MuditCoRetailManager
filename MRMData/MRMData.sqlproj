@@ -60,9 +60,15 @@
     <Folder Include="dbo\Tables" />
     <Folder Include="dbo\Views" />
     <Folder Include="dbo\Stored Procedures" />
-    <Folder Include="PublishLocations" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="PublishLocations\MRMData.publish.xml" />
+    <Build Include="dbo\User.sql" />
+    <Build Include="dbo\Sale.sql" />
+    <Build Include="dbo\SaleDetail.sql" />
+    <Build Include="dbo\Product.sql" />
+    <Build Include="dbo\Inventory.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="MRMData.refactorlog" />
   </ItemGroup>
 </Project>
