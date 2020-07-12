@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace MRMDesktopUserInterface.ViewModels
 {
-    
-   public class LoginViewModel : Screen
+
+    public class LoginViewModel : Screen
     {
         private String _username;
         private String _password;
@@ -22,18 +22,20 @@ namespace MRMDesktopUserInterface.ViewModels
         public String UserName
         {
             get { return _username; }
-            set {
+            set
+            {
                 _username = value;
                 NotifyOfPropertyChange(() => UserName);
                 NotifyOfPropertyChange(() => CanLogIn);
             }
         }
-           
+
 
         public String Password
         {
             get { return _password; }
-            set {
+            set
+            {
                 _password = value;
                 NotifyOfPropertyChange(() => Password);
                 NotifyOfPropertyChange(() => CanLogIn);
@@ -42,7 +44,7 @@ namespace MRMDesktopUserInterface.ViewModels
 
         public bool CanLogIn
         {
-         get
+            get
             {
                 bool output = false;
                 if (UserName?.Length > 0 && Password?.Length > 0)
@@ -52,10 +54,44 @@ namespace MRMDesktopUserInterface.ViewModels
                 return output;
             }
         }
+        public Boolean IsErrorVisible
+        {
+            get
+            {
+                Boolean output = false;
+                if (ErrorMessage?.Length > 0)
+                {
+                    output = true;
+                }
+                return output;
+            }
+        }
+
+        private string _ErrorMessage;
+
+        public string ErrorMessage
+        {
+            get { return _ErrorMessage; }
+            set
+            {
+                _ErrorMessage = value;
+                NotifyOfPropertyChange(() => ErrorMessage);
+                NotifyOfPropertyChange(() => IsErrorVisible);
+             
+            }
+        }
 
         public async Task LogIn()
         {
-            var result = await _apihelper.Authenticates(UserName, Password);
+            try
+            {
+                ErrorMessage = "";
+                var result = await _apihelper.Authenticates(UserName, Password);
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = ex.Message;
+            }
         }
     }
 }

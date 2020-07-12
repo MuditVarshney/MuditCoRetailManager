@@ -6,7 +6,7 @@
     <Name>MRMData</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{88b62227-8da6-4929-8c60-314e46ffe60f}</ProjectGuid>
+    <ProjectGuid>{1ab3086f-497e-455d-bdcc-0f97af5daedb}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
@@ -57,16 +57,21 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="dbo" />
-    <Folder Include="dbo\Tables" />
-    <Folder Include="dbo\Views" />
     <Folder Include="dbo\Stored Procedures" />
+    <Folder Include="dbo\Views" />
+    <Folder Include="dbo\Tables" />
+    <Folder Include="Publish Locations" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\User.sql" />
-    <Build Include="dbo\Sale.sql" />
-    <Build Include="dbo\SaleDetail.sql" />
-    <Build Include="dbo\Product.sql" />
-    <Build Include="dbo\Inventory.sql" />
+    <None Include="Publish Locations\MRMData.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\User.sql" />
+    <Build Include="dbo\Tables\Sale.sql" />
+    <Build Include="dbo\Tables\SaleDetail.sql" />
+    <Build Include="dbo\Tables\Product.sql" />
+    <Build Include="dbo\Tables\Inventory.sql" />
+    <Build Include="dbo\Stored Procedures\spUserLookup.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="MRMData.refactorlog" />
