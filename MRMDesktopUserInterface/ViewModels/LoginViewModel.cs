@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MRMDesktopUILibrary.API;
 
 namespace MRMDesktopUserInterface.ViewModels
 {
@@ -87,6 +88,7 @@ namespace MRMDesktopUserInterface.ViewModels
             {
                 ErrorMessage = "";
                 var result = await _apihelper.Authenticates(UserName, Password);
+                await _apihelper.GetLoggedInUsreInfo(result.Access_Token);
             }
             catch (Exception ex)
             {

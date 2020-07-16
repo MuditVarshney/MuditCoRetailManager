@@ -1,10 +1,11 @@
-﻿using MRMDesktopUserInterface.Models;
+﻿using MRMDesktopUILibrary.Models;
 using System.Threading.Tasks;
 
-namespace MRMDesktopUserInterface.Helpers
+namespace MRMDesktopUILibrary.API
 {
     public interface IAPIHelper
     {
         Task<AuthenticatedUser> Authenticates(string username, string password);
+        Task GetLoggedInUsreInfo(string token);
     }
 }

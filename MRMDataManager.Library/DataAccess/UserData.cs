@@ -13,7 +13,7 @@ namespace MRMDataManager.Library.DataAccess
         public List<UserModel> GetUserById(string Id)
         {
             SqlDataAccess sql = new SqlDataAccess();
-            var p = new { id = Id };
+            var p = new { Id = Id };
             var output = sql.LoadData<UserModel, dynamic>("dbo.spUserLookup", p, "MRMData");
             return output;
         }
