@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MRMDesktopUILibrary.API;
+using MRMDesktopUserInterface.EventsModels;
 
 namespace MRMDesktopUserInterface.ViewModels
 {
@@ -15,10 +16,12 @@ namespace MRMDesktopUserInterface.ViewModels
         private String _username;
         private String _password;
         private IAPIHelper _apihelper;
+        private IEventAggregator _events;
 
-        public LoginViewModel(IAPIHelper apihelper)
+        public LoginViewModel(IAPIHelper apihelper, IEventAggregator events)
         {
             _apihelper = apihelper;
+            _events = events;
         }
         public String UserName
         {
@@ -89,6 +92,8 @@ namespace MRMDesktopUserInterface.ViewModels
                 ErrorMessage = "";
                 var result = await _apihelper.Authenticates(UserName, Password);
                 await _apihelper.GetLoggedInUsreInfo(result.Access_Token);
+                
+                _events.PublishOnUIThread(new LogOnEvent());
             }
             catch (Exception ex)
             {

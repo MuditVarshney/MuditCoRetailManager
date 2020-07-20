@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MRMDesktopUserInterface.ViewModels
 {
-    class SalesViewModel : Screen
+   public  class SalesViewModel : Screen
     {
 
         private BindingList<string> _product;
@@ -23,15 +23,15 @@ namespace MRMDesktopUserInterface.ViewModels
             }
         }
 
-        private string _itenQuantity;
+        private int _itenQuantity;
 
-        public string ItemQuantity
+        public int ItemQuantity
         {
             get { return _itenQuantity; }
             set
             {
                 _itenQuantity = value;
-                NotifyOfPropertyChange(() => Products);
+                NotifyOfPropertyChange(() => ItemQuantity);
             }
         }
 
